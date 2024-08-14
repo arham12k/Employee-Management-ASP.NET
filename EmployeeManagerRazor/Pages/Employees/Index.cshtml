@@ -1,0 +1,54 @@
+﻿@page
+@model EmployeeManagerRazor.Pages.Employees.IndexModel
+@{
+}
+
+
+
+<div class="container">
+	<div class="row pt-4 pb-2">
+		<div class="col-12 col-md-6">
+			<h4>Employee List</h4>
+		</div>
+		<div class="col-12 col-md-6 text-md-end text-start">
+			<a class="btn btn-primary mt-2 mt-md-0" asp-page="Create" >
+				Add New Employee
+			</a>
+		</div>
+	</div>
+
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Employee Id</th>
+					<th scope="col">Employee Name</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Email</th>
+					<th scope="col">DOB</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var obj in Model.EmployeesList)
+				{
+					<tr>
+						<td>#serial</td>
+						<td>@obj.Id</td>
+						<td>@obj.Name</td>
+						<td>@obj.Mobile</td>
+						<td>@obj.Email</td>
+						<td>@obj.BirthDate.ToString("yyyy-MM-dd")</td>
+						<td>
+							<div class="text-center">
+								<a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-dark btn-sm">Update</a>
+								<a asp-page="Delete" asp-route-id="@obj.Id" class="btn btn-danger btn-sm">Delete</a>
+							</div>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

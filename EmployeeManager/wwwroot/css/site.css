@@ -21,3 +21,38 @@ body {
   margin-bottom: 60px;
 }
 
+
+/*@media (max-width: 576px) {
+    .table-responsive td:nth-of-type(3),
+    .table-responsive td:nth-of-type(4),
+    .table-responsive td:nth-of-type(5),
+    .table-responsive th:nth-of-type(3),
+    .table-responsive th:nth-of-type(4),
+    .table-responsive th:nth-of-type(5)
+    {
+        display: none;
+    }
+
+    .table-responsive td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+    }
+}
+*/
+
+@media (max-width: 576px) {
+    .table-responsive td
+     {
+        font-size:12px;
+    }
+
+    .table-responsive td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+    }
+    .btn{
+        margin-bottom:5px;
+    }
+}

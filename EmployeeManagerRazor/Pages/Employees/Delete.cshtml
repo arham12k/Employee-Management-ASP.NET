@@ -1,0 +1,49 @@
+﻿@page
+@model EmployeeManagerRazor.Pages.Employees.DeleteModel
+@{
+}
+<form method="post">
+	<input asp-for="Employee.Id" class="form-control" hidden>
+
+
+
+	<h2 class="mb-4 mt-4">Add Employee</h2>
+	<div class="mb-3">
+		@* <div asp-validation-summary="All" class="text-danger"></div> *@
+
+		<label asp-for="Employee.Name" class="form-label">Employee Name</label>
+		<input asp-for="Employee.Name" class="form-control" disabled>
+		<span asp-validation-for="Employee.Name" class="text-danger"></span>
+
+	</div>
+	<div class="mb-3">
+		<label asp-for="Employee.Mobile" class="form-label"></label>
+		<input asp-for="Employee.Mobile" class="form-control" disabled>
+		<span asp-validation-for="Employee.Mobile" class="text-danger"></span>
+
+	</div>
+	<div class="mb-3">
+		<label asp-for="Employee.Email" class="form-label"></label>
+		<input asp-for="Employee.Email" class="form-control" disabled>
+		<span asp-validation-for="Employee.Email" class="text-danger"></span>
+
+	</div>
+	<div class="mb-3">
+		<label asp-for="Employee.BirthDate" class="form-label"></label>
+		<input asp-for="Employee.BirthDate" class="form-control" disabled>
+		<span asp-validation-for="Employee.BirthDate" class="text-danger"></span>
+
+	</div>
+
+	<button type="submit" class="btn btn-danger">Delete</button>
+	<a asp-page="Index" type="submit" class="btn btn-warning">Back to List</a>
+
+</form>
+
+@section Scripts {
+
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+
+}
